@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+    <title>Document</title>
+</head>
+
+<body style="max-width: 1920px;">
+    <div id="root"></div>
+    <script>
+        !function () {
+            function a() {
+                var fontSize = null;
+                if (parseInt(document.documentElement.clientWidth) > 720) {
+                    fontSize = 720 / 750 * 10 / 16 * 1000;
+                } else {
+                    fontSize = document.documentElement.clientWidth / 750 * 10 / 16 * 1000;
+                }
+
+                //做下字体取整
+                var normalized = (16 * fontSize / 100).toFixed(0);
+                fontSize = normalized * 100 / 16;
+
+                document.documentElement.style.fontSize = fontSize + "%";
+            }
+            var b = null;
+            window.addEventListener("resize", function () {
+                clearTimeout(b);
+                b = setTimeout(a, 300);
+            }, !1);
+            a();
+        }(window);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+.page-layout-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+
+    .page-layout-top {
+        flex: 0;
+        height: 100px;
+    }
+    .page-layout-body {
+        flex: 1;
+        // height: 400px;
+        overflow-y: scroll;
+    }
+}

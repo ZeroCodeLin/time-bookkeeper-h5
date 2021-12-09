@@ -1,0 +1,20 @@
+@import '../base.scss';
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+
+    .icon-item{
+        background-color: #ccc;
+        width: pxToRem(110);
+        height: pxToRem(110);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: pxToRem(60);
+    }
+
+    .active {
+        background-color: #4cd0f1;
+    }
+}

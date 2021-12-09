@@ -1,0 +1,39 @@
+@import '../base.scss';
+
+.bill-list-container {
+    // overflow-y: scroll;
+    // height: calc(100vh - 50px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+
+    .bill-list-item {
+    
+        .bill-list-item-top{
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            justify-content: space-between;
+            padding: pxToRem(5) pxToRem(10);
+        }
+    
+        .bill-list-item-body {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: pxToRem(10) pxToRem(10);
+    
+            .bill-list-item-icon{
+                display: flex;
+                align-items: center;
+    
+                .icon-item{
+                    background-color: #4cd0f1;
+                    width: pxToRem(70);
+                    height: pxToRem(70);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: pxToRem(50);
+                    margin-right: pxToRem(10);
+                }
+            }
+        }
+    }
+}

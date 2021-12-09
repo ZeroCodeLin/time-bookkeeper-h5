@@ -1,0 +1,48 @@
+@import '../../../base.scss';
+
+.numberkey-board-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #ece9e9;
+    height: 40vh;
+
+    .numberkey-board-top {
+        display: flex;
+        align-items: center;
+        padding: pxToRem(5) pxToRem(10);
+        border: 1px solid #ccc;
+
+        .numberkey-board-input {
+            flex: 1;
+            padding-right: pxToRem(20);
+        }
+
+        .numberkey-board-money {
+            text-align: right;
+            min-width: pxToRem(50);
+            min-width: pxToRem(80);
+        }
+    }
+
+    .numberkey-board {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+
+        .numberkey-board-item {
+            width: 25%;
+            height: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -webkit-touch-callout:none;
+            -webkit-user-select:none;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+
+            &:active {
+                background-color: #ccc;
+            }
+        }
+    }
+}

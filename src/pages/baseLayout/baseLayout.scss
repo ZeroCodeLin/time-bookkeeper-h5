@@ -1,0 +1,22 @@
+.baselayout-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+
+    .baselayout-top {
+        flex: 0;
+        border-bottom: solid 1px var(--adm-border-color);
+      }
+      
+      .baselayout-body {
+        flex: 1;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+      }
+    .baselayout-bottom {
+        flex: 0;
+      border-top: solid 1px var(--adm-border-color);
+    }
+}
