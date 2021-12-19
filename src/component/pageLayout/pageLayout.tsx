@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Grid } from 'antd-mobile'
+import { Button, Grid } from 'antd-mobile'
 import { MyIcon, NavigateBar } from '../../component'
 import { getIconList } from "../../services/icons";
 
 import './index.scss'
 
 export const PageLayout = props => {
-    const { children } = props;
+    const { children, navBar } = props;
     const [iconList, setIconList] = useState([]);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ export const PageLayout = props => {
     return (
         <div className="page-layout-container">
             <div className="page-layout-top">
-                <NavigateBar backArrow={false}>添加</NavigateBar>
+                {navBar ? navBar : (<NavigateBar backArrow={false}>添加</NavigateBar>)}
             </div>
             <div className="page-layout-body">
                 {children}

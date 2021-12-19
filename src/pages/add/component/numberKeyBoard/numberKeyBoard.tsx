@@ -53,7 +53,6 @@ export const NumberKeyBoard = props => {
                 })
                 break
             default:
-                debugger
                 if (Number(value) === 0) {
                     setValue(key)
                     return

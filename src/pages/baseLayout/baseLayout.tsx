@@ -1,5 +1,5 @@
 import { NavBar, SafeArea, TabBar } from "antd-mobile";
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router";
 
 import './baseLayout.scss'
@@ -10,6 +10,11 @@ export const BaseLayout: React.FC<any> = props => {
     const location = useLocation()
     const { pathname } = location
 
+    useEffect(() => {
+        if (location.pathname === '/') {
+            navigate("home")
+        }
+    }, [])
     const setRouteActive = (value: string) => {
         navigate(value)
     }

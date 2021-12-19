@@ -1,5 +1,5 @@
-import React from 'react';
-import { HashRouter, Route, Router, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { HashRouter, Route, useLocation, Routes, Navigate } from 'react-router-dom';
 import { ReceiptOutline, PicturesOutline, UserOutline, HistogramOutline, AddSquareOutline } from 'antd-mobile-icons'
 
 import 'reset-css';
@@ -10,6 +10,12 @@ import { Add } from './add';
 import { Login } from './login';
 
 export const App: React.FC<any> = props => {
+    // const location = useLocation();
+
+    // useEffect(() => {
+    //     console.log(location)
+    // }, [])
+
     const tabs = [
         {
             key: '/home',
@@ -40,6 +46,7 @@ export const App: React.FC<any> = props => {
 
     return (
         <HashRouter>
+            {/* <Navigate to="/home" state={{ from: location }} /> */}
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/" element={<BaseLayout tabs={tabs} />}  >

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Grid, NumberKeyboard, Toast } from 'antd-mobile'
+import { Button, Grid, NumberKeyboard, Toast } from 'antd-mobile'
 import classNames from "classnames";
 import { MyIcon, NavigateBar, PageLayout } from '../../component'
 import { getIconList } from "../../services/icons";
@@ -29,12 +29,17 @@ export const Add = props => {
         setVisible(true)
         setSelectedItem(item)
     }
+    const closeNumberKeyBoard = () => {
+        setVisible(false)
+        setSelectedItem({})
+    }
 
     const addItem = (obj) => {
         const params = {
             ...obj,
             money: Number(obj.money),
             type: 1,
+            remark: obj.remark ? obj.remark : selectedItem.name,
             iconId: selectedItem.id
         }
         console.log(params)
@@ -49,7 +54,11 @@ export const Add = props => {
     }
 
     return (
-        <PageLayout>
+        <PageLayout navBar={
+            visible ? (
+                <NavigateBar backArrow={false} right={<Button onClick={closeNumberKeyBoard}>取消</Button>}>添加</NavigateBar>
+            ) : null
+        }>
             <div style={{ padding: "10px" }}>
                 <Grid columns={4} gap={8}>
                     {iconList?.map((item, index) => (
